@@ -171,11 +171,11 @@ export const Hero: React.FC<HeroProps> = ({ onEnter, onDiyaClick, heroDiyaLit })
           />
 
           {/* Golden Framed Picture */}
-          <div className="relative p-1.5 sm:p-2 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-amber-300 via-amber-500 to-amber-800 shadow-2xl shadow-amber-950/60 border border-amber-300/50">
+          <div className="relative p-1.5 sm:p-2 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-amber-300 via-amber-500 to-amber-800 shadow-2xl shadow-amber-950/70 border border-amber-300/50">
             <img
               src={lakshmiDeviImg}
               alt="Maa Lakshmi Devi — Goddess of Wealth, Light and Prosperity"
-              className="w-48 sm:w-60 md:w-72 aspect-square object-contain rounded-xl sm:rounded-2xl drop-shadow-xl"
+              className="w-44 sm:w-56 md:w-64 aspect-[316/456] object-cover rounded-xl sm:rounded-2xl drop-shadow-2xl"
               loading="eager"
             />
           </div>
