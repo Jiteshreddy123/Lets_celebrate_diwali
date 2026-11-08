@@ -8,9 +8,10 @@ export interface ShareData {
 
 export function getShareUrl(): string {
   if (typeof window !== 'undefined') {
-    return window.location.origin + window.location.pathname;
+    const base = window.location.origin + window.location.pathname;
+    return base.replace(/\/$/, '') + '/?v=diwali';
   }
-  return 'https://diwali-unlimited.web.app/';
+  return 'https://diwali-unlimited.web.app/?v=diwali';
 }
 
 export function formatWhatsAppMessage(data?: ShareData): string {
