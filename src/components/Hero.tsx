@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ChevronDown, Heart } from 'lucide-react';
 import { createAmbientParticle, AmbientParticle } from '../utils/particles';
+import lakshmiDeviImg from '../assets/lakshmi-devi.jpg';
 
 interface HeroProps {
   onEnter: () => void;
@@ -147,27 +148,45 @@ export const Hero: React.FC<HeroProps> = ({ onEnter, onDiyaClick, heroDiyaLit })
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg sm:text-2xl md:text-3xl font-serif font-medium text-amber-200/90 tracking-wide mb-5"
+          className="text-lg sm:text-2xl md:text-3xl font-serif font-medium text-amber-200/90 tracking-wide mb-3"
         >
           &ldquo;Light a diya. Spark a smile. Spread happiness.&rdquo;
         </motion.p>
 
-        {/* Supporting Text */}
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
-          className="max-w-2xl text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed mb-8 px-4"
+        {/* Sacred Lakshmi Devi Portrait in Exact Proportion */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92, y: 15 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="relative my-3 flex flex-col items-center"
         >
-          This Diwali, don&apos;t just send wishes. Create a little celebration and share the light with someone special.
-        </motion.p>
+          {/* Radiant Halo behind Lakshmi Devi */}
+          <div 
+            className="absolute inset-0 rounded-3xl blur-2xl pointer-events-none transition-all duration-700"
+            style={{
+              background: heroDiyaLit
+                ? 'radial-gradient(circle, rgba(251, 191, 36, 0.45) 0%, rgba(245, 158, 11, 0.2) 50%, transparent 75%)'
+                : 'radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, transparent 70%)'
+            }}
+          />
+
+          {/* Golden Framed Picture */}
+          <div className="relative p-1.5 sm:p-2 rounded-2xl sm:rounded-3xl bg-gradient-to-b from-amber-300 via-amber-500 to-amber-800 shadow-2xl shadow-amber-950/60 border border-amber-300/50">
+            <img
+              src={lakshmiDeviImg}
+              alt="Maa Lakshmi Devi — Goddess of Wealth, Light and Prosperity"
+              className="w-48 sm:w-60 md:w-72 aspect-square object-contain rounded-xl sm:rounded-2xl drop-shadow-xl"
+              loading="eager"
+            />
+          </div>
+        </motion.div>
 
         {/* Hero Interactive Clay Diya */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="my-3 sm:my-5 cursor-pointer group flex flex-col items-center"
+          transition={{ duration: 1, delay: 0.55 }}
+          className="my-1 sm:my-3 cursor-pointer group flex flex-col items-center"
           onClick={onDiyaClick}
         >
           <div className="relative p-2">
