@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050711;
+  color: #f8fafc;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050711;
+}
+::-webkit-scrollbar-thumb {
+  background: #342009;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D97706;
+}
+
+/* Festive gold glow filters */
+.glow-gold {
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.65));
+}
+.glow-gold-lg {
+  filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 45px rgba(234, 88, 12, 0.4));
+}
+.glow-flame {
+  filter: drop-shadow(0 0 8px #ff7b00) drop-shadow(0 0 18px #ffaa00) drop-shadow(0 0 32px #ff4500);
+}
+
+/* Glassmorphism */
+.glass-festive {
+  background: rgba(14, 20, 44, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 169, 60, 0.18);
+}
+
+.glass-card {
+  background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08) 0%, rgba(11, 15, 36, 0.85) 75%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+}
+
+/* Touch action prevent scroll on canvases */
+.canvas-interactive {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Golden text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FDE047 30%, #F59E0B 70%, #D97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-subtle {
+  background: linear-gradient(135deg, #FEF08A 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Festive rangoli pattern background generator */
+.bg-mandala-pattern {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px),
+                    radial-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
